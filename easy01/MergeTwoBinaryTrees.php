@@ -10,6 +10,7 @@
 /**
  *
  * https://leetcode.com/problems/merge-two-binary-trees/description/
+ *
  * Given two binary trees and imagine that when you put one of them to cover the other,
  * some nodes of the two trees are overlapped while the others are not.
  *
