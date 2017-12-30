@@ -51,11 +51,15 @@ function twoSum($array, $target)
 function twoSum2($array, $target)
 {
     foreach ($array as $key => $value) {
+        $hashTable[$value] = $key;
+    }
+    foreach ($array as $key => $value) {
         $complement = $target - $value;
-        if (array_search($complement, $array)) {
-            return [$value, $complement];
+        if ($hashTable[$complement]) {
+            return [$value, $hashTable[$complement]];
         }
     }
+    echo 'no result';
 }
 
 echo "Brute Force : <br>";
