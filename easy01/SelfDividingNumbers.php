@@ -34,11 +34,29 @@
 /**
  * @param int $left
  * @param int $right
+ * @return array
  */
 function solution($left, $right)
 {
     $return = [];
-    for ($i = $left; $i < $right; $i++) {
-
+    for ($i = $left; $i <= $right; $i++) {
+        if (isDividing($i)) $return[] = $i;
     }
+    return $return;
 }
+
+function isDividing($num)
+{
+    $numString = (string)$num;
+    $len = strlen($numString);
+
+    for ($i = 0; $i < $len; $i++) {
+        if ($numString[$i] == 0 || $num % $numString[$i] != 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+var_dump(solution(1, 22));
