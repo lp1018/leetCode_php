@@ -113,10 +113,9 @@ function formatBinaryTree($tree, $deep = 1, $rightOffset = 0, $maxDeep = 10)
     $rightChild = is_array($tree['rightChild']) ? formatBinaryTree($tree['rightChild'], $deep + 1, $rightOffset + 2) : '';
 
     $basicsLength = 40;
-    $leftOffset = ($maxDeep - $deep + $rightOffset) * $basicsLength;
 
     //absolute position
-    $dataLeft = $leftOffset;
+    $dataLeft = ($maxDeep - $deep + $rightOffset) * $basicsLength;
     $dataTop = $deep * $basicsLength;
 
     if ($leftChild) {
