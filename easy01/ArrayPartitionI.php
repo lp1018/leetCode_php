@@ -20,7 +20,20 @@
  * All the integers in the array will be in the range of [-10000, 10000].
  */
 
-function solution()
+/**
+ * @param $arr
+ * @return int
+ */
+function solution($arr)
 {
+    sort($arr, SORT_NUMERIC);
+    $count = count($arr);
+    $return = 0;
+    for ($i = 0; $i < $count; $i += 2) {
+        $return += $arr[$i];
+    }
 
+    return $return;
 }
+
+print_r(solution([1, 4, 3, 2]));
