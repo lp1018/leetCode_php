@@ -109,8 +109,8 @@ function formatBinaryTree($tree, $deep = 1, $rightOffset = 0, $maxDeep = 10)
 {
     $data = $tree['data'];
 
-    $leftChild = is_array($tree['leftChild']) ? formatBinaryTree($tree['leftChild'], $deep + 1) : '';
-    $rightChild = is_array($tree['rightChild']) ? formatBinaryTree($tree['rightChild'], $deep + 1, $rightOffset + 2) : '';
+    $leftChild = is_array($tree['leftChild']) ? formatBinaryTree($tree['leftChild'], $deep + 1, 0, $maxDeep) : '';
+    $rightChild = is_array($tree['rightChild']) ? formatBinaryTree($tree['rightChild'], $deep + 1, $rightOffset + 2, $maxDeep) : '';
 
     $basicsLength = 40;
 
